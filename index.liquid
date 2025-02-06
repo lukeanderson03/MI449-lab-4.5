@@ -1,7 +1,15 @@
 ---
 layout: layout.liquid
-title: 11ty Boilerplate
+title: Planetary Playing Cards
 ---
-
-<h1>Yet Another 11ty <strong>Boilerplate</strong></h1>
-<img alt="pine" src="/images/pine.png" width="50" />
+<main>
+{% planet-cards 'star' 'Sun' 'Type G2V' %}
+{% planet-cards 'planet' 'Mercury' '0.39 AU' %}
+{% planet-cards 'planet' 'Venus' '0.72 AU' %}
+{% planet-cards 'planet' 'Earth' '1.00 AU' %}
+{% planet-cards 'planet' 'Mars' '1.52 AU' %}
+{% planet-cards 'planet' 'Jupiter' '5.20 AU' %}
+{% planet-cards 'planet' 'Saturn' '9.54 AU' %}
+{% planet-cards 'planet' 'Uranus' '19.2 AU' %}
+{% planet-cards 'planet' 'Neptune' '30.1 AU' %}
+</main>
