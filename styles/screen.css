@@ -1,8 +1,21 @@
+:root {
+    --card-color: rgb(75, 40, 134);
+    --text-color: #EAE8FF;
+    --small-planet: 70px;
+    --medium-planet: 100px;
+    --large-planet: 150px;
+    --huge-planet: 180px;
+    --card-marg: 20px auto 0px auto;
+}
+
 body {
     font-family: Helvetica, sans-serif;
     color: #EAE8FF;
-    background: #2D3142;
-    padding: 0 60px;
+    background: rgb(42, 1, 52);
+    background: linear-gradient(90deg, rgba(42, 1, 52, 1) 43%, rgba(6, 64, 43, 1) 100%);
+    /* background: rgb(42, 1, 52);
+    background: linear-gradient(90deg, rgba(42, 1, 52, 1) 11%, rgba(6, 64, 43, 1) 40%, rgba(42, 1, 52, 1) 66%, rgba(6, 64, 43, 1) 87%); */
+    padding: 0 30px;
     text-align: center;
 }
 
@@ -15,13 +28,22 @@ h1 {
 
 img {
     width: 50px;
+    padding-bottom: 50px;
 }
+
 
 main {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-template-rows: 1fr 1fr;
     gap: 20px;
+    margin-bottom: 50px;
+}
+
+@media screen and (min-width: 1590px) {
+    main {
+        grid-template-columns: repeat(6, 1fr);
+    }
 }
 
 .star {
@@ -29,6 +51,14 @@ main {
     grid-row: 1 / 3;
     border-style: solid;
     border-radius: 5%;
+    background-color: var(--card-color);
+}
+
+.star:hover {
+    transform: scale(1.1) !important;
+    transition: transform 0.3s ease !important;
+    z-index: 2 !important;
+    position: relative !important;
 }
 
 .star h2 {
@@ -40,8 +70,13 @@ main {
 }
 
 .planet {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     border-style: solid;
+    border-color: var(--text-color);
     border-radius: 5%;
+    background-color: var(--card-color);
 }
 
 .planet h2 {
@@ -52,10 +87,77 @@ main {
     font-size: 1.4em;
 }
 
+.planet div {
+    border-radius: 50%;
+    margin: var(--card-marg);
+}
+
+.planet:hover {
+    transform: scale(1.2) !important;
+    transition: transform 0.3s ease !important;
+    z-index: 2 !important;
+}
+
+/* Planet and Star Designs */
+
 #Sun {
-    margin: 20px auto 20px auto;
+    margin: 70px auto 0 auto;
     height: 350px;
     width: 350px;
     border-radius: 50%;
     background-color: yellow;
+}
+
+#Mercury {
+    width: var(--small-planet);
+    height: var(--small-planet);
+    background-color: grey;
+}
+
+#Venus {
+    width: var(--medium-planet);
+    height: var(--medium-planet);
+    background-color: hsl(30, 35%, 80%);
+}
+
+#Earth {
+    width: var(--medium-planet);
+    height: var(--medium-planet);
+    background-color: #006792;
+    border: 7px solid #3baf6f;
+    box-sizing: border-box;
+}
+
+#Mars {
+    width: var(--small-planet);
+    height: var(--small-planet);
+    background-color: rgb(70, 15, 0)
+}
+
+#Jupiter {
+    width: var(--huge-planet);
+    height: var(--huge-planet);
+    background-color: #e27f34;
+}
+
+#Saturn {
+    width: var(--huge-planet);
+    height: var(--huge-planet);
+    background-color: #d8ca9d;
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 7px;
+    border-color: grey;
+}
+
+#Uranus {
+    width: var(--large-planet);
+    height: var(--large-planet);
+    background-color: rgba(172, 229, 238, 0.8);
+}
+
+#Neptune {
+    width: var(--large-planet);
+    height: var(--large-planet);
+    background-color: #6081FF;
 }

@@ -9,6 +9,7 @@ title: Liquid Layout
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title }}</title>
   <link rel="stylesheet" href="/styles/screen.css">
+  <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <header>
   <h1>
@@ -17,6 +18,18 @@ title: Liquid Layout
 </header>
 <body>
  {{ content }}
+  <script>
+    const slideUp = {
+      distance: '150%',
+      origin: 'bottom',
+      opacity: null,
+      duration: '800',
+      easing: 'ease'
+    };
+    ScrollReveal().reveal('h1', { duration: '800' });
+    ScrollReveal().reveal('.planet', slideUp);
+    ScrollReveal().reveal('.star', slideUp);
+  </script>
 </body>
 <footer>
   <img src="images/rocket-ship.svg" alt="rocket ship">
